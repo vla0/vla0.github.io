@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S5J2KK8FVD"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-S5J2KK8FVD');
+    </script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleVLA: Building State-of-the-Art VLAs the Simple Way</title>
+    <meta name="description" content="SimpleVLA achieves state-of-the-art results in Vision-Language-Action models using the simplest approach - representing actions as text without any architectural changes.">
+    <meta name="keywords" content="SimpleVLA, VLA, Vision-Language-Action, robotics, machine learning, NVIDIA">
+    <meta name="author" content="Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Bulkis, Fabio Ramos">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🤖</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">SimpleVLA</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#abstract">Abstract</a>
+                <a href="#results">Results</a>
+                <a href="#citation">Citation</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="title fade-in">SimpleVLA</h1>
+                <h2 class="subtitle fade-in-delay-1">Building State-of-the-Art VLAs the Simple Way</h2>
+                <p class="authors fade-in-delay-2">
+                    <a href="https://imankgoyal.github.io/" target="_blank" class="author">Ankit Goyal</a>
+                    <a href="https://hh409.user.srcf.net/" target="_blank" class="author">Hugo Hadfield</a>
+                    <a href="https://www.xuningyang.com/" target="_blank" class="author">Xuning Yang</a>
+                    <a href="https://research.nvidia.com/person/valts-blukis" target="_blank" class="author">Valts Bulkis</a>
+                    <a href="https://fabioramos.github.io/Home.html" target="_blank" class="author">Fabio Ramos</a>
+                </p>
+                <p class="affiliation fade-in-delay-2">NVIDIA</p>
+
+                <!-- Video Container -->
+                <div class="video-container fade-in-delay-3 hero-video-small">
+                    <video autoplay loop muted playsinline class="hero-video" preload="auto">
+                        <source src="Videos/teaser.mp4?v=2" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">SimpleVLA converts a VLM into a VLA by prompting it to predict actions as text</p>
+                </div>
+
+                <!-- Key Finding Badge -->
+                <div class="key-finding fade-in-delay-4">
+                    <div class="badge">
+                        <span class="badge-icon">✨</span>
+                        <span class="badge-text">Achieves state-of-the-art results without any architectural changes</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons fade-in-delay-5">
+                    <a href="data/root.pdf" class="btn btn-primary" target="_blank">
+                        <span class="btn-icon">📄</span>
+                        Paper (PDF)
+                    </a>
+                    <a href="https://github.com/simplevla" class="btn btn-secondary" target="_blank">
+                        <span class="btn-icon">💻</span>
+                        Code (Coming Soon)
+                    </a>
+                    <a href="#citation" class="btn btn-secondary">
+                        <span class="btn-icon">📝</span>
+                        Cite
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="section">
+        <div class="container">
+            <h2 class="section-title">Abstract</h2>
+            <div class="abstract-content">
+                <p>
+                    Vision-Language-Action models (VLAs) hold immense promise for enabling generalist robot manipulation. However, the best way to build them remains an open question. Current approaches often add complexity, such as modifying the existing vocabulary of a Vision-Language Model (VLM) with action tokens or introducing special action heads.
+                </p>
+                <p>
+                    <strong>Curiously, the simplest strategy of representing actions directly as text has remained largely unexplored.</strong>
+                </p>
+                <p>
+                    This work introduces <strong>SimpleVLA</strong> to investigate this idea. We find that SimpleVLA is not only effective; it is surprisingly powerful. With the right design, SimpleVLA outperforms more involved models.
+                </p>
+                <div class="highlight-box">
+                    <h3>Key Findings</h3>
+                    <ul>
+                        <li>✓ Outperforms all methods trained on the same robotic data on LIBERO benchmark</li>
+                        <li>✓ Outperforms methods with large-scale pretraining (π₀, π₀.₅-KI, GR00T-N1, MolmoAct)</li>
+                        <li>✓ Outperforms SmolVLA in real-world tasks despite no large-scale pretraining</li>
+                        <li>✓ Requires <strong>no architectural changes</strong> to the base VLM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">How SimpleVLA Compares</h2>
+            <p class="section-subtitle">We categorize existing VLAs into three families. SimpleVLA takes the simplest approach.</p>
+            
+            <div class="comparison-image-container">
+                <img src="data/figures/comp_fig_horizontal.png" alt="VLA Comparison" class="comparison-image" id="comparison-img">
+            </div>
+
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <div class="card-icon">🔢</div>
+                    <h3>Discrete Token VLAs</h3>
+                    <p class="card-label">Examples: RT-2, OpenVLA</p>
+                    <ul>
+                        <li>Discretize actions into bins</li>
+                        <li>Assign tokens from VLM vocabulary</li>
+                        <li>⚠️ Limited action resolution</li>
+                        <li>⚠️ Compromises language understanding</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="card-icon">🧠</div>
+                    <h3>Generative Action Head VLAs</h3>
+                    <p class="card-label">Examples: π₀, SmolVLA</p>
+                    <ul>
+                        <li>Attach action generation head</li>
+                        <li>Use diffusion or flow matching</li>
+                        <li>⚠️ Requires new neural network</li>
+                        <li>⚠️ May degrade VLM capabilities</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card">
+                    <div class="card-icon">⚙️</div>
+                    <h3>Custom Architecture VLAs</h3>
+                    <p class="card-label">Examples: OpenVLA-OFT, π-FAST</p>
+                    <ul>
+                        <li>Specialized modifications</li>
+                        <li>Custom tokenizers</li>
+                        <li>⚠️ Significant changes</li>
+                        <li>⚠️ Complex training pipelines</li>
+                    </ul>
+                </div>
+
+                <div class="comparison-card highlight">
+                    <div class="card-icon">✨</div>
+                    <h3>SimpleVLA (Ours)</h3>
+                    <p class="card-label">The simplest approach</p>
+                    <ul>
+                        <li>✓ Actions as text (integers)</li>
+                        <li>✓ No vocabulary changes</li>
+                        <li>✓ No architectural changes</li>
+                        <li>✓ Arbitrary action resolution</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Results</h2>
+            
+            <!-- Real World Results -->
+            <div class="results-subsection">
+                <h3 class="subsection-title">Real-World Performance</h3>
+                <p class="subsection-subtitle">SimpleVLA outperforms SmolVLA on real robot tasks using the SO-100 platform</p>
+                
+                <div class="video-results-container">
+                    <div class="video-wrapper video-square">
+                        <video controls class="results-video" poster="Videos/realworld-thumbnail.jpg">
+                            <source src="Videos/SimpleVLA-RealWorld.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="video-caption">Real-world demonstrations: block reorientation, apple pushing, banana and cupcake pick-and-place</p>
+                    </div>
+                </div>
+
+                <div class="real-world-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon">🤖</div>
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Tasks Evaluated</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-number">+12.5%</div>
+                        <div class="stat-label">vs SmolVLA</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-number">4 Hz</div>
+                        <div class="stat-label">Inference Speed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🎓</div>
+                        <div class="stat-number">100</div>
+                        <div class="stat-label">Demos per Task</div>
+                    </div>
+                </div>
+
+                <div class="callout-box">
+                    <strong>Key Insight:</strong> SimpleVLA achieves these results without any large-scale SO-100 pretraining, while SmolVLA was specifically pretrained on this dataset.
+                </div>
+            </div>
+
+            <!-- LIBERO Results -->
+            <div class="results-subsection">
+                <h3 class="subsection-title">Performance on LIBERO Benchmark</h3>
+                <p class="subsection-subtitle">SimpleVLA achieves the best performance among models without large-scale pretraining</p>
+                
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Model</th>
+                                <th>Large-scale Pretrain</th>
+                                <th>Type</th>
+                                <th>Spatial</th>
+                                <th>Object</th>
+                                <th>Goal</th>
+                                <th>Long</th>
+                                <th>Average</th>
+                                <th>Avg. Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="section-header">
+                                <td colspan="9"><strong>Models without large-scale pretraining</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Diffusion Policy</td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td>N/A</td>
+                                <td>78.3</td>
+                                <td>92.5</td>
+                                <td>68.3</td>
+                                <td>50.5</td>
+                                <td>72.4</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>π₀-FAST (Paligemma)</td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td>Custom</td>
+                                <td>87.0</td>
+                                <td>63.0</td>
+                                <td>89.0</td>
+                                <td>48.0</td>
+                                <td>71.8</td>
+                                <td>6.0</td>
+                            </tr>
+                            <tr>
+                                <td>SmolVLA (0.24B)</td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td>Gen Head</td>
+                                <td>87.0</td>
+                                <td>93.0</td>
+                                <td>88.0</td>
+                                <td>63.0</td>
+                                <td>82.8</td>
+                                <td>5.3</td>
+                            </tr>
+                            <tr>
+                                <td>SmolVLA (2.25B)</td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td>Gen Head</td>
+                                <td>93.0</td>
+                                <td>94.0</td>
+                                <td>91.0</td>
+                                <td>77.0</td>
+                                <td>88.8</td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td>OpenVLA-OFT</td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td>Custom</td>
+                                <td>94.3</td>
+                                <td>95.2</td>
+                                <td>91.7</td>
+                                <td><span class="underline">86.5</span></td>
+                                <td>91.9</td>
+                                <td>2.8</td>
+                            </tr>
+                            <tr>
+                                <td>π₀.₅-KI</td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td>Gen Head</td>
+                                <td><span class="underline">96.6</span></td>
+                                <td><span class="underline">97.2</span></td>
+                                <td><span class="underline">94.6</span></td>
+                                <td>85.8</td>
+                                <td><span class="underline">93.3</span></td>
+                                <td><span class="underline">2.3</span></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td><strong>SimpleVLA (Ours)</strong></td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td><strong>Simple</strong></td>
+                                <td><strong>97.0</strong></td>
+                                <td><strong>97.8</strong></td>
+                                <td><strong>96.2</strong></td>
+                                <td><strong>87.6</strong></td>
+                                <td><strong>94.7</strong></td>
+                                <td><strong>1.0</strong></td>
+                            </tr>
+                            <tr class="section-header">
+                                <td colspan="9"><strong>Models with large-scale pretraining (for reference)</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Octo</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Gen Head</td>
+                                <td>78.9</td>
+                                <td>85.7</td>
+                                <td>84.6</td>
+                                <td>51.1</td>
+                                <td>75.1</td>
+                                <td>8.8</td>
+                            </tr>
+                            <tr>
+                                <td>OpenVLA</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Dis. Tok.</td>
+                                <td>84.7</td>
+                                <td>88.4</td>
+                                <td>79.2</td>
+                                <td>53.7</td>
+                                <td>76.5</td>
+                                <td>8.0</td>
+                            </tr>
+                            <tr>
+                                <td>π₀-FAST</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Custom</td>
+                                <td>90.0</td>
+                                <td>86.0</td>
+                                <td>95.0</td>
+                                <td>73.0</td>
+                                <td>86.0</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>MolmoAct</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Dis. Tok.</td>
+                                <td>87.0</td>
+                                <td>95.4</td>
+                                <td>87.6</td>
+                                <td>77.2</td>
+                                <td>86.8</td>
+                                <td>6.5</td>
+                            </tr>
+                            <tr>
+                                <td>GR00T-N1</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Gen Head</td>
+                                <td>94.4</td>
+                                <td>97.6</td>
+                                <td>93.0</td>
+                                <td><span class="underline">90.6</span></td>
+                                <td>93.9</td>
+                                <td>4.5</td>
+                            </tr>
+                            <tr>
+                                <td>π₀</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Gen Head</td>
+                                <td>96.8</td>
+                                <td><strong>98.8</strong></td>
+                                <td>95.8</td>
+                                <td>85.2</td>
+                                <td>94.2</td>
+                                <td>3.3</td>
+                            </tr>
+                            <tr>
+                                <td>π₀.₅-KI</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Gen Head</td>
+                                <td><strong>98.0</strong></td>
+                                <td>97.8</td>
+                                <td>95.6</td>
+                                <td>85.8</td>
+                                <td>94.3</td>
+                                <td>3.0</td>
+                            </tr>
+                            <tr>
+                                <td>OpenVLA-OFT</td>
+                                <td><span class="yes-icon">✓</span></td>
+                                <td>Custom</td>
+                                <td><span class="underline">97.6</span></td>
+                                <td><span class="underline">98.4</span></td>
+                                <td><strong>97.9</strong></td>
+                                <td><strong>94.5</strong></td>
+                                <td><strong>97.1</strong></td>
+                                <td><strong>1.5</strong></td>
+                            </tr>
+                            <tr class="reference-row">
+                                <td><em>SimpleVLA (Ours)</em></td>
+                                <td><span class="no-icon">✗</span></td>
+                                <td><em>Simple</em></td>
+                                <td><em>97.0</em></td>
+                                <td><em>97.8</em></td>
+                                <td><em><span class="underline">96.2</span></em></td>
+                                <td><em>87.6</em></td>
+                                <td><em><span class="underline">94.7</span></em></td>
+                                <td><em><span class="underline">2.8</span></em></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="result-highlights">
+                    <div class="highlight-card">
+                        <div class="highlight-number">94.7%</div>
+                        <div class="highlight-label">Average Success Rate</div>
+                        <div class="highlight-desc">Best among non-pretrained models</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">#1</div>
+                        <div class="highlight-label">Rank</div>
+                        <div class="highlight-desc">Among non-pretrained VLAs</div>
+                    </div>
+                    <div class="highlight-card">
+                        <div class="highlight-number">#2.8</div>
+                        <div class="highlight-label">Overall Rank</div>
+                        <div class="highlight-desc">Including pretrained models</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Citation Section -->
+    <section id="citation" class="section">
+        <div class="container">
+            <h2 class="section-title">Citation</h2>
+            <p class="section-subtitle">If you find SimpleVLA useful in your research, please consider citing:</p>
+            
+            <div class="citation-box">
+                <pre><code>@article{goyal2025simplevla,
+  title={SimpleVLA: Building State-of-the-Art VLAs the Simple Way},
+  author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Bulkis, Valts and Ramos, Fabio},
+  journal={arXiv preprint arXiv:2501.XXXXX},
+  year={2025}
+}</code></pre>
+                <button class="copy-btn" onclick="copyBibtex()">
+                    <span class="copy-icon">📋</span> Copy BibTeX
+                </button>
+            </div>
+
+            <div class="links-section">
+                <h3>Resources</h3>
+                <div class="resource-links">
+                    <a href="data/root.pdf" class="resource-link" target="_blank">
+                        <span class="resource-icon">📄</span>
+                        <span class="resource-text">
+                            <strong>Paper (PDF)</strong>
+                            <small>Full paper with detailed experiments</small>
+                        </span>
+                    </a>
+                    <a href="https://simplevla.github.io" class="resource-link" target="_blank">
+                        <span class="resource-icon">🌐</span>
+                        <span class="resource-text">
+                            <strong>Project Website</strong>
+                            <small>Additional resources and updates</small>
+                        </span>
+                    </a>
+                    <a href="https://github.com/simplevla" class="resource-link" target="_blank">
+                        <span class="resource-icon">💻</span>
+                        <span class="resource-text">
+                            <strong>Code & Models</strong>
+                            <small>Coming soon</small>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 NVIDIA Research. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

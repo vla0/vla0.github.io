@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+
+# Documentation (not needed for deployment)
+README_website.md
+QUICK_START.md
+WEBSITE_SUMMARY.md
+
+# Original files
+SimpleVLA_RAL_2025.zip
+Videos/teaser-original.mp4
+Videos/teaser.pdf
+
+# LaTeX source files (keep only PDF and converted images)
+data/*.tex
+data/*.cls
+data/*.bib
+data/sec/
+data/tables/
+data/x_root.tex
+data/figures/*.pdf
+

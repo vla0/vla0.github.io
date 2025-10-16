@@ -8,6 +8,48 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Track paper clicks and downloads
+document.addEventListener('DOMContentLoaded', function() {
+    // Track arXiv paper clicks
+    document.querySelectorAll('a[href*="arxiv.org"]').forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'paper_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'arXiv Paper Click',
+                    'value': 1
+                });
+            }
+        });
+    });
+    
+    // Track direct PDF access (data/root.pdf)
+    document.querySelectorAll('a[href*="data/root.pdf"]').forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'pdf_download', {
+                    'event_category': 'engagement',
+                    'event_label': 'PDF Download',
+                    'value': 1
+                });
+            }
+        });
+    });
+    
+    // Track code repository clicks
+    document.querySelectorAll('a[href*="github.com/NVlabs/vla0"]').forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'code_click', {
+                    'event_category': 'engagement',
+                    'event_label': 'GitHub Code Click',
+                    'value': 1
+                });
+            }
+        });
+    });
+});
+
 // Copy BibTeX function
 function copyBibtex() {
     const bibtex = `@article{goyal2025vla0,

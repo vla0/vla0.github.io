@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function copyBibtex() {
     const bibtex = `@article{goyal2025vla0,
   title={VLA-0: Building State-of-the-Art VLAs with Zero Modification},
-  author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Bulkis, Valts and Ramos, Fabio},
+  author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Blukis, Valts and Ramos, Fabio},
   journal={arXiv preprint arXiv:2510.13054},
   year={2025}
 }`;

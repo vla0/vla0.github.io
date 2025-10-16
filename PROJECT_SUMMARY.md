@@ -185,7 +185,7 @@ Currently running on localhost:8000
 ```bibtex
 @article{goyal2025vla0,
   title={VLA-0: Building State-of-the-Art VLAs with Zero Modification},
-  author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Bulkis, Valts and Ramos, Fabio},
+  author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Blukis, Valts and Ramos, Fabio},
   journal={arXiv preprint arXiv:2510.13054},
   year={2025}
 }
@@ -251,7 +251,7 @@ python create_libero_animation.py
 ## 📧 Author Information
 
 **Contact:** Ankit Goyal - ankgoyal@umich.edu  
-**Authors:** Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Bulkis, Fabio Ramos  
+**Authors:** Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Blukis, Fabio Ramos  
 **Affiliation:** NVIDIA Research
 
 **Author Homepages (linked on website):**

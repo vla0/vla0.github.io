@@ -152,7 +152,7 @@ ffmpeg -i Videos/SimpleVLA-RealWorld-web.mp4 -ss 00:00:01 \
 
 ## Credits
 
-**Authors:** Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Bulkis, Fabio Ramos  
+**Authors:** Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Blukis, Fabio Ramos  
 **Affiliation:** NVIDIA Research
 
 ---

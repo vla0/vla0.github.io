@@ -6,20 +6,21 @@
 }
 
 :root {
-    --primary-color: #0ea5e9;
-    --primary-dark: #0284c7;
-    --primary-light: #38bdf8;
-    --secondary-color: #0891b2;
-    --accent-color: #06b6d4;
-    --navy-dark: #0f172a;
-    --navy-medium: #1e293b;
-    --navy-light: #334155;
-    --text-dark: #0f172a;
-    --text-light: #64748b;
-    --text-lighter: #94a3b8;
+    /* Option 1: Monochromatic Slate - Minimalist & Professional */
+    --primary-color: #64748b;
+    --primary-dark: #475569;
+    --primary-light: #94a3b8;
+    --secondary-color: #64748b;
+    --accent-color: #22d3ee;
+    --navy-dark: #0a0f1a;
+    --navy-medium: #1a1f2e;
+    --navy-light: #2a2f3e;
+    --text-dark: #0a0f1a;
+    --text-light: #94a3b8;
+    --text-lighter: #cbd5e1;
     --bg-light: #f8fafc;
     --bg-white: #ffffff;
-    --border-color: #e2e8f0;
+    --border-color: #334155;
     --success-color: #10b981;
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -115,7 +116,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+    background: linear-gradient(135deg, #0a0f1a 0%, #1a1f2e 50%, #2a2f3e 100%);
     position: relative;
     overflow: hidden;
     padding: 6rem 0 2rem;

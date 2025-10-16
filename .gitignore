@@ -2,13 +2,15 @@
 .DS_Store
 
 # Documentation (not needed for deployment)
-README_website.md
-QUICK_START.md
-WEBSITE_SUMMARY.md
+TWITTER_THREAD.txt
+CODE_README.md
 
-# Original files
+# Original/backup files
 SimpleVLA_RAL_2025.zip
 Videos/teaser-original.mp4
+Videos/teaser-original-new.mp4
+Videos/SimpleVLA-RealWorld-original.mp4
+Videos/SimpleVLA-RealWorld-original-new.mp4
 Videos/teaser.pdf
 
 # LaTeX source files (keep only PDF and converted images)

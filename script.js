@@ -10,10 +10,10 @@ window.addEventListener('scroll', function() {
 
 // Copy BibTeX function
 function copyBibtex() {
-    const bibtex = `@article{goyal2025simplevla,
-  title={SimpleVLA: Building State-of-the-Art VLAs the Simple Way},
+    const bibtex = `@article{goyal2025vla0,
+  title={VLA-0: Building State-of-the-Art VLAs with Zero Modification},
   author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Bulkis, Valts and Ramos, Fabio},
-  journal={arXiv preprint arXiv:2501.XXXXX},
+  journal={arXiv preprint arXiv:2510.13054},
   year={2025}
 }`;
     
@@ -130,12 +130,16 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const video = entry.target;
-                if (video.paused && video.autoplay) {
-                    video.play().catch(e => console.log('Video autoplay prevented:', e));
+                if (video.paused) {
+                    // Autoplay hero video, LIBERO animation, and real-world video
+                    if (video.autoplay || video.classList.contains('libero-animation') || video.classList.contains('realworld-video')) {
+                        video.play().catch(e => console.log('Video autoplay prevented:', e));
+                    }
                 }
             } else {
                 const video = entry.target;
-                if (!video.paused && video.autoplay) {
+                // Pause videos when they leave viewport
+                if (!video.paused && (video.autoplay || video.classList.contains('libero-animation') || video.classList.contains('realworld-video'))) {
                     video.pause();
                 }
             }

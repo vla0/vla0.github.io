@@ -1,0 +1,64 @@
+VLA-0 PROJECT - QUICK REFERENCE
+================================
+
+ESSENTIAL INFO:
+--------------
+Project Path: /Users/angoyal/Documents/code/simplevla_webpage
+Live Website: https://vla0.github.io/
+Website Repo: https://github.com/vla0/vla0.github.io
+Code Repo: https://github.com/NVlabs/vla0
+Local Server: http://localhost:8000
+
+IMPORTANT FILES:
+---------------
+• TWITTER_THREAD.txt - Ready-to-post Twitter announcement (5 tweets)
+• CODE_README.md - README for code repository
+• PROJECT_SUMMARY.md - Complete project documentation
+• index.html - Main website
+• style.css - Monochromatic slate design
+
+KEY VIDEOS:
+----------
+• Videos/teaser.mp4 (1.0MB) - Hero section
+• Videos/SimpleVLA-RealWorld.mp4 (6.6MB) - Real robot demo  
+• Videos/libero_results.mp4 (1.2MB) - LIBERO animation
+• Videos/SimpleVLA-RealWorld.gif (17MB) - Social media GIF (local only)
+
+QUICK COMMANDS:
+--------------
+# Start local server
+python3 -m http.server 8000
+
+# Stop server
+lsof -ti:8000 | xargs kill
+
+# Git push (with SSH key)
+export GIT_SSH_COMMAND="ssh -i ~/.ssh/id_simplevla"
+git push origin main
+
+DESIGN CHOICES:
+--------------
+• Color: Monochromatic slate (gray + cyan accents)
+• Hero: Elevated platform with inward white border (708px)
+• Theme: Minimalist, professional, content-first
+
+RESULTS SUMMARY:
+---------------
+LIBERO: 94.7% (#1 without pretraining)
+Real-World: +12.5% over SmolVLA
+Key Point: Zero VLM modifications
+
+WHAT'S READY:
+------------
+✅ Website (live)
+✅ Twitter thread (polished)
+✅ All videos (optimized)
+✅ LIBERO animation (11s, professional)
+✅ Documentation (comprehensive)
+
+NEXT STEPS:
+----------
+1. Post Twitter thread
+2. Release code (use CODE_README.md)
+3. Update arXiv ID when ready
+

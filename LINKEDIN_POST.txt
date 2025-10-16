@@ -1,0 +1,213 @@
+VLA-0 LINKEDIN POST
+===================
+
+POST TEXT:
+----------
+
+Excited to share VLA-0: Building State-of-the-Art VLAs with Zero Modification! 🚀
+
+What's the right architecture for Vision-Language-Action (VLA) models?
+
+The field has explored custom action heads (π₀), discrete tokens (OpenVLA), and novel designs (OpenVLA-OFT).
+
+We tried the simplest approach: a VLM with ZERO modifications. Just ask it to predict actions as text.
+
+The results surprised us:
+
+📊 LIBERO Benchmark:
+• 94.7% success rate - #1 among all methods without large-scale pretraining
+• Outperforms π₀.5-KI, OpenVLA-OFT, SmolVLA (all without pretraining)
+• Even beats models WITH large-scale pretraining: π₀ (94.2%), GR00T-N1 (93.9%), MolmoAct (86.8%)
+
+🤖 Real-World Results:
+• Tested on SO-100 robotic arm
+• +12.5 percentage points over SmolVLA
+• Despite SmolVLA's large-scale SO-100 pretraining advantage
+
+The key insight? With the right training recipe (action decoding, ensemble prediction, masked augmentation), you don't need to modify the VLM at all.
+
+Paper, code, and full results in comments below! ⬇️
+
+#MachineLearning #Robotics #AI #VisionLanguageAction #Research #NVIDIA #DeepLearning #ComputerVision
+
+---
+
+FIRST COMMENT (Post immediately after main post):
+-------------------------------------------------
+
+Resources:
+
+📄 Paper: https://arxiv.org/abs/2510.13054
+🌐 Interactive website with demos: https://vla0.github.io/
+💻 Code & models: https://github.com/NVlabs/vla0 (releasing soon!)
+
+---
+
+SECOND COMMENT (1 minute later):
+---------------------------------
+
+Huge thanks to my amazing collaborators! 🙏
+
+Hugo Hadfield: https://www.linkedin.com/in/hugo-hadfield-1a7b6045/
+Xuning Yang: https://www.linkedin.com/in/xuningyang/
+Valts Blukis: https://www.linkedin.com/in/valtsblukis/
+Fabio Ramos: https://www.linkedin.com/in/fabio-ramos-3256b421/
+
+And the incredible teams at NVIDIA Robotics and NVIDIA AI:
+https://www.linkedin.com/showcase/nvidiarobotics/
+https://www.linkedin.com/showcase/nvidia-ai/
+
+Couldn't have done this without you all!
+
+---
+
+MEDIA TO ATTACH:
+----------------
+Option 1 (Video): Attach Videos/libero_results.mp4 (most impactful)
+Option 2 (Multiple): Create carousel with:
+  - Image 1: Screenshot of LIBERO animation (final frame with both plots)
+  - Image 2: Screenshot from real-world video
+  - Image 3: Architecture diagram from teaser
+
+Recommended: Use Option 1 (single video) - LinkedIn videos get 5x more engagement
+
+---
+
+POSTING STRATEGY:
+-----------------
+
+BEST TIME TO POST:
+• Tuesday-Thursday, 8:00-10:00 AM PT
+• Catches professionals checking LinkedIn at start of workday
+• Different from Twitter timing (LinkedIn is more "morning coffee" platform)
+
+CRITICAL: POST LINKS IN FIRST COMMENT
+• Main post has NO LINKS (better algorithm reach)
+• Immediately after posting, add first comment with all links
+• LinkedIn algorithm won't penalize comments with links
+• Keeps main post clean and professional
+
+AFTER POSTING:
+1. IMMEDIATELY post first comment with all resource links
+2. Share to your personal feed AND company page if applicable
+3. Tag collaborators in second comment (not main post) for cleaner look
+4. Engage with comments within first hour
+5. Consider posting in relevant LinkedIn groups (robotics, ML)
+
+CROSS-PROMOTION:
+• Post on LinkedIn 1-2 hours AFTER Twitter
+• Reference Twitter thread in first comment
+• Slightly different audience = complementary reach
+
+---
+
+LINKEDIN vs TWITTER DIFFERENCES:
+--------------------------------
+
+LINKEDIN:
+✅ Longer posts are fine (this is ~250 words)
+✅ Professional, measured tone
+✅ Links in COMMENTS (not main post) - better reach
+✅ First 3 lines critical (visible before "see more")
+✅ Hashtags at end (not in-line)
+✅ Emphasize business/research impact
+✅ Videos get great engagement
+✅ Can be more technical
+✅ Algorithm penalizes links in main post
+
+TWITTER:
+✅ Short, punchy tweets
+✅ Build suspense across thread
+✅ No links in first tweet
+✅ More casual tone acceptable
+✅ Multiple videos across thread
+
+---
+
+ALTERNATIVE SHORTER VERSION:
+-----------------------------
+
+If you prefer shorter (LinkedIn allows long-form but short can work):
+
+---
+
+Introducing VLA-0 🚀
+
+The entire VLA architecture: Prompt a VLM to output actions as text.
+
+No action heads. No special tokens. Zero modifications.
+
+Results:
+→ 94.7% on LIBERO (#1 without pretraining)
+→ Beats π₀, GR00T-N1, MolmoAct
+→ +12.5% over SmolVLA on real robots
+
+Turns out VLMs already know how to control robots. You just need to ask them the right way.
+
+With: Hugo Hadfield, Xuning Yang, Valts Blukis, Fabio Ramos @ NVIDIA Research
+
+Links in comments! ⬇️
+
+#MachineLearning #Robotics #AI #Research
+
+[ATTACH: Videos/libero_results.mp4]
+
+---
+
+FIRST COMMENT (Post immediately):
+---------------------------------
+
+📄 Paper: https://vla0.github.io/data/root.pdf
+🌐 Full results: https://vla0.github.io/
+💻 Code: https://github.com/NVlabs/vla0 (soon!)
+
+---
+
+ENGAGEMENT TIPS:
+---------------
+
+COMMENT SEQUENCE:
+1. FIRST COMMENT (immediately): Post all resource links
+2. SECOND COMMENT (1 min later): Thank collaborators with LinkedIn profile links
+   - Tag each person individually (creates notifications → they'll engage)
+   - LinkedIn will auto-suggest profiles as you type names
+3. THIRD COMMENT (2 min later): Ask question to drive discussion
+   "What's your experience with VLMs for robot control? Curious to hear perspectives!"
+
+NOTE: When posting comment 2, you can also use @ mentions:
+Type "@Hugo Hadfield" and LinkedIn will auto-complete with their profile.
+This sends them a notification and they're more likely to engage/share!
+
+DURING FIRST HOUR:
+• Thank everyone who engages
+• Reply to every comment
+• Share updates ("Also live on Twitter!" with thread link)
+
+LATER:
+• If paper gets on arXiv, add comment with arXiv link
+• Cross-post updates from Twitter discussion
+
+---
+
+WHICH VERSION TO USE:
+--------------------
+
+LONGER VERSION:
+• More context and details
+• Better for those unfamiliar with VLAs
+• Shows thought leadership
+• Professional and comprehensive
+
+SHORTER VERSION:
+• More scannable
+• Gets to the point faster
+• Better for busy feeds
+• More Twitter-like
+
+RECOMMENDATION: Use LONGER version
+• LinkedIn rewards substantive posts
+• Your audience will read it
+• Shows depth of work
+• Better for professional context
+
+

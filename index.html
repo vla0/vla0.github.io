@@ -13,9 +13,9 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SimpleVLA: Building State-of-the-Art VLAs the Simple Way</title>
-    <meta name="description" content="SimpleVLA achieves state-of-the-art results in Vision-Language-Action models using the simplest approach - representing actions as text without any architectural changes.">
-    <meta name="keywords" content="SimpleVLA, VLA, Vision-Language-Action, robotics, machine learning, NVIDIA">
+    <title>VLA-0: Building State-of-the-Art VLAs with Zero Modification</title>
+    <meta name="description" content="VLA-0 achieves state-of-the-art results in Vision-Language-Action models without any architectural changes - representing actions as text with zero modification to the base VLM.">
+    <meta name="keywords" content="VLA-0, VLA, Vision-Language-Action, robotics, machine learning, NVIDIA">
     <meta name="author" content="Ankit Goyal, Hugo Hadfield, Xuning Yang, Valts Bulkis, Fabio Ramos">
     
     <!-- Favicon -->
@@ -29,7 +29,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="nav-logo">SimpleVLA</div>
+            <div class="nav-logo">VLA-0</div>
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#abstract">Abstract</a>
@@ -43,8 +43,8 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="title fade-in">SimpleVLA</h1>
-                <h2 class="subtitle fade-in-delay-1">Building State-of-the-Art VLAs the Simple Way</h2>
+                <h1 class="title fade-in">VLA-0</h1>
+                <h2 class="subtitle fade-in-delay-1">Building State-of-the-Art VLAs with Zero Modification</h2>
                 <p class="authors fade-in-delay-2">
                     <a href="https://imankgoyal.github.io/" target="_blank" class="author">Ankit Goyal</a>
                     <a href="https://hh409.user.srcf.net/" target="_blank" class="author">Hugo Hadfield</a>
@@ -60,7 +60,7 @@
                         <source src="Videos/teaser.mp4?v=2" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
-                    <p class="video-caption">SimpleVLA converts a VLM into a VLA by prompting it to predict actions as text</p>
+                    <p class="video-caption">VLA-0 converts a VLM into a VLA by prompting it to predict actions as text</p>
                 </div>
 
                 <!-- Key Finding Badge -->
@@ -73,14 +73,14 @@
 
                 <!-- Action Buttons -->
                 <div class="action-buttons fade-in-delay-5">
-                    <a href="data/root.pdf" class="btn btn-primary" target="_blank">
+                    <a href="https://arxiv.org/abs/2510.13054" class="btn btn-primary" target="_blank">
                         <span class="btn-icon">📄</span>
-                        Paper (PDF)
+                        Paper (arXiv)
                     </a>
-                    <a href="https://github.com/simplevla" class="btn btn-secondary" target="_blank">
+                    <a href="https://github.com/NVlabs/vla0" class="btn btn-secondary" target="_blank">
                         <span class="btn-icon">💻</span>
                         Code (Coming Soon)
-                    </a>
+</a>
                     <a href="#citation" class="btn btn-secondary">
                         <span class="btn-icon">📝</span>
                         Cite
@@ -102,7 +102,7 @@
                     <strong>Curiously, the simplest strategy of representing actions directly as text has remained largely unexplored.</strong>
                 </p>
                 <p>
-                    This work introduces <strong>SimpleVLA</strong> to investigate this idea. We find that SimpleVLA is not only effective; it is surprisingly powerful. With the right design, SimpleVLA outperforms more involved models.
+                    This work introduces <strong>VLA-0</strong> to investigate this idea. We find that VLA-0 is not only effective; it is surprisingly powerful. With the right design, VLA-0 outperforms more involved models.
                 </p>
                 <div class="highlight-box">
                     <h3>Key Findings</h3>
@@ -120,8 +120,8 @@
     <!-- Comparison Section -->
     <section id="comparison" class="section bg-light">
         <div class="container">
-            <h2 class="section-title">How SimpleVLA Compares</h2>
-            <p class="section-subtitle">We categorize existing VLAs into three families. SimpleVLA takes the simplest approach.</p>
+            <h2 class="section-title">How VLA-0 Compares</h2>
+            <p class="section-subtitle">We categorize existing VLAs into three families. VLA-0 takes the simplest approach.</p>
             
             <div class="comparison-image-container">
                 <img src="data/figures/comp_fig_horizontal.png" alt="VLA Comparison" class="comparison-image" id="comparison-img">
@@ -166,8 +166,8 @@
 
                 <div class="comparison-card highlight">
                     <div class="card-icon">✨</div>
-                    <h3>SimpleVLA (Ours)</h3>
-                    <p class="card-label">The simplest approach</p>
+                    <h3>VLA-0 (Ours)</h3>
+                    <p class="card-label">Zero modification approach</p>
                     <ul>
                         <li>✓ Actions as text (integers)</li>
                         <li>✓ No vocabulary changes</li>
@@ -187,11 +187,11 @@
             <!-- Real World Results -->
             <div class="results-subsection">
                 <h3 class="subsection-title">Real-World Performance</h3>
-                <p class="subsection-subtitle">SimpleVLA outperforms SmolVLA on real robot tasks using the SO-100 platform</p>
+                <p class="subsection-subtitle">VLA-0 outperforms SmolVLA on real robot tasks using the SO-100 platform</p>
                 
                 <div class="video-results-container">
                     <div class="video-wrapper video-square">
-                        <video controls class="results-video" poster="Videos/realworld-thumbnail.jpg">
+                        <video controls class="results-video realworld-video" poster="Videos/realworld-thumbnail.jpg" muted loop>
                             <source src="Videos/SimpleVLA-RealWorld.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
@@ -223,14 +223,24 @@
                 </div>
 
                 <div class="callout-box">
-                    <strong>Key Insight:</strong> SimpleVLA achieves these results without any large-scale SO-100 pretraining, while SmolVLA was specifically pretrained on this dataset.
+                    <strong>Key Insight:</strong> VLA-0 achieves these results without any large-scale SO-100 pretraining, while SmolVLA was specifically pretrained on this dataset.
                 </div>
             </div>
 
             <!-- LIBERO Results -->
             <div class="results-subsection">
                 <h3 class="subsection-title">Performance on LIBERO Benchmark</h3>
-                <p class="subsection-subtitle">SimpleVLA achieves the best performance among models without large-scale pretraining</p>
+                <p class="subsection-subtitle">VLA-0 achieves the best performance among models without large-scale pretraining</p>
+                
+                <!-- LIBERO Animation -->
+                <div class="video-results-container" style="margin-bottom: 3rem;">
+                    <div class="video-wrapper" style="max-width: 100%; aspect-ratio: auto; background: white;">
+                        <video controls class="results-video libero-animation" style="width: 100%; height: auto; object-fit: contain;" muted loop>
+                            <source src="Videos/libero_results.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
                 
                 <div class="table-container">
                     <table class="results-table">
@@ -318,7 +328,7 @@
                                 <td><span class="underline">2.3</span></td>
                             </tr>
                             <tr class="highlight-row">
-                                <td><strong>SimpleVLA (Ours)</strong></td>
+                                <td><strong>VLA-0 (Ours)</strong></td>
                                 <td><span class="no-icon">✗</span></td>
                                 <td><strong>Simple</strong></td>
                                 <td><strong>97.0</strong></td>
@@ -420,7 +430,7 @@
                                 <td><strong>1.5</strong></td>
                             </tr>
                             <tr class="reference-row">
-                                <td><em>SimpleVLA (Ours)</em></td>
+                                <td><em>VLA-0 (Ours)</em></td>
                                 <td><span class="no-icon">✗</span></td>
                                 <td><em>Simple</em></td>
                                 <td><em>97.0</em></td>
@@ -460,13 +470,13 @@
     <section id="citation" class="section">
         <div class="container">
             <h2 class="section-title">Citation</h2>
-            <p class="section-subtitle">If you find SimpleVLA useful in your research, please consider citing:</p>
+            <p class="section-subtitle">If you find VLA-0 useful in your research, please consider citing:</p>
             
             <div class="citation-box">
-                <pre><code>@article{goyal2025simplevla,
-  title={SimpleVLA: Building State-of-the-Art VLAs the Simple Way},
+                <pre><code>@article{goyal2025vla0,
+  title={VLA-0: Building State-of-the-Art VLAs with Zero Modification},
   author={Goyal, Ankit and Hadfield, Hugo and Yang, Xuning and Bulkis, Valts and Ramos, Fabio},
-  journal={arXiv preprint arXiv:2501.XXXXX},
+  journal={arXiv preprint arXiv:2510.13054},
   year={2025}
 }</code></pre>
                 <button class="copy-btn" onclick="copyBibtex()">
@@ -477,21 +487,21 @@
             <div class="links-section">
                 <h3>Resources</h3>
                 <div class="resource-links">
-                    <a href="data/root.pdf" class="resource-link" target="_blank">
+                    <a href="https://arxiv.org/abs/2510.13054" class="resource-link" target="_blank">
                         <span class="resource-icon">📄</span>
                         <span class="resource-text">
-                            <strong>Paper (PDF)</strong>
-                            <small>Full paper with detailed experiments</small>
+                            <strong>Paper (arXiv)</strong>
+                            <small>arXiv:2510.13054</small>
                         </span>
                     </a>
-                    <a href="https://simplevla.github.io" class="resource-link" target="_blank">
+                    <a href="https://vla0.github.io" class="resource-link" target="_blank">
                         <span class="resource-icon">🌐</span>
                         <span class="resource-text">
                             <strong>Project Website</strong>
                             <small>Additional resources and updates</small>
                         </span>
                     </a>
-                    <a href="https://github.com/simplevla" class="resource-link" target="_blank">
+                    <a href="https://github.com/NVlabs/vla0" class="resource-link" target="_blank">
                         <span class="resource-icon">💻</span>
                         <span class="resource-text">
                             <strong>Code & Models</strong>

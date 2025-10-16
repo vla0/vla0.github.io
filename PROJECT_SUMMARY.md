@@ -329,7 +329,7 @@ git config core.sshCommand "ssh -i ~/.ssh/id_simplevla"
 - **Live Website:** https://vla0.github.io/
 - **Website Repo:** https://github.com/vla0/vla0.github.io
 - **Code Repo:** https://github.com/NVlabs/vla0
-- **Paper PDF:** https://vla0.github.io/data/root.pdf
+- **Paper (arXiv):** https://arxiv.org/abs/2510.13054
 - **Local Server:** http://localhost:8000 (when running)
 
 ---

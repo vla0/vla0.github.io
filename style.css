@@ -1214,26 +1214,47 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-links {
+    .nav-container {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
         gap: 0.75rem;
-        font-size: 0.8125rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .nav-btn {
-        padding: 0.4rem 0.75rem;
-        font-size: 0.8125rem;
     }
     
     .nav-logo {
         font-size: 1.25rem;
     }
     
-    .nav-container {
-        padding: 0.75rem 1rem;
-        flex-direction: column;
+    .nav-links {
         gap: 0.75rem;
+        font-size: 0.8125rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    /* Regular nav links - keep on first row */
+    .nav-links a:not(.nav-btn) {
+        order: 1;
+    }
+    
+    /* Force Paper and Code buttons to new row together */
+    .nav-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8125rem;
+        order: 2;
+        flex-basis: auto;
+    }
+    
+    /* Add line break before buttons */
+    .nav-btn:first-of-type {
+        flex-basis: 100%;
+        width: auto;
+        margin-top: 0.5rem;
+    }
+    
+    /* Hero section - add top padding to prevent overlap */
+    .hero {
+        padding: 8rem 0 2rem;
     }
 
     .title {

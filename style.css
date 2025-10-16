@@ -74,6 +74,7 @@ body {
 .nav-links {
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav-links a {
@@ -82,6 +83,8 @@ body {
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
+    display: inline-flex;
+    align-items: center;
 }
 
 .nav-links a::after {
@@ -104,21 +107,22 @@ body {
 }
 
 .nav-btn {
-    background: rgba(14, 165, 233, 0.1);
+    background: rgba(100, 116, 139, 0.1);
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    border: 1px solid rgba(14, 165, 233, 0.3);
+    border: 1px solid rgba(100, 116, 139, 0.3);
     transition: all 0.3s ease;
+    font-size: 0.9375rem;
 }
 
 .nav-btn::after {
-    display: none;
+    display: none !important;
 }
 
 .nav-btn:hover {
-    background: rgba(14, 165, 233, 0.2);
-    border-color: rgba(14, 165, 233, 0.5);
-    color: var(--primary-color);
+    background: rgba(100, 116, 139, 0.2);
+    border-color: rgba(100, 116, 139, 0.5);
+    color: var(--text-dark);
     transform: translateY(-1px);
 }
 

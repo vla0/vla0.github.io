@@ -1225,36 +1225,33 @@ body {
     }
     
     .nav-links {
-        gap: 0.75rem;
         font-size: 0.8125rem;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        gap: 0.75rem;
         justify-content: center;
         width: 100%;
     }
     
-    /* Regular nav links - keep on first row */
-    .nav-links a:not(.nav-btn) {
-        order: 1;
-    }
+    /* Regular nav links on first row */
+    .nav-links a:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .nav-links a:nth-child(2) { grid-column: 2; grid-row: 1; }
+    .nav-links a:nth-child(3) { grid-column: 3; grid-row: 1; }
+    .nav-links a:nth-child(4) { grid-column: 4; grid-row: 1; }
     
-    /* Force Paper and Code buttons to new row together */
+    /* Paper and Code buttons on second row, centered */
+    .nav-btn:nth-child(5) { grid-column: 2; grid-row: 2; }
+    .nav-btn:nth-child(6) { grid-column: 3; grid-row: 2; }
+    
     .nav-btn {
         padding: 0.4rem 0.75rem;
         font-size: 0.8125rem;
-        order: 2;
-        flex-basis: auto;
-    }
-    
-    /* Add line break before buttons */
-    .nav-btn:first-of-type {
-        flex-basis: 100%;
-        width: auto;
         margin-top: 0.5rem;
     }
     
-    /* Hero section - add top padding to prevent overlap */
+    /* Hero section - more top padding to prevent title overlap */
     .hero {
-        padding: 8rem 0 2rem;
+        padding: 10rem 0 2rem;
     }
 
     .title {
